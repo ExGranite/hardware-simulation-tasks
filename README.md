@@ -1,4 +1,4 @@
-# hardware-simulation-tasks
+# Hardware Simulation Tasks
 
 ### Software(s):
 - PSpice
