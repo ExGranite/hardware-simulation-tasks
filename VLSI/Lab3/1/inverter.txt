@@ -1,0 +1,17 @@
+// DSCH 2.7a
+// 08/12/2021 15:45:09
+// A:\FALL 2021\CSE460\Lab\LAB Assignment 3\Lab Task\Problem1\inverter.sch
+
+module inverter( a,~a);
+ input a;
+ output ~a;
+ pmos #(14) pmos(~a,vdd,a); // 2.0u 0.12u
+ nmos #(14) nmos(~a,vss,a); // 1.0u 0.12u
+endmodule
+
+// Simulation parameters in Verilog Format
+always
+#1000 a=~a;
+
+// Simulation parameters
+// a CLK 10 10

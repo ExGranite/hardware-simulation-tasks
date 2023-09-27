@@ -1,0 +1,19 @@
+module problem2_19101196(d, load, clk, q);
+	
+	input [4:0] d;
+	input load;
+	input clk;
+	output reg [4:0] q;
+	
+		always @(negedge clk)
+			if (load)
+				q <= d;
+			else
+				begin
+					q[0] <= d[4];
+					q[4] <= d[3];
+					q[3] <= d[2];
+					q[2] <= d[1];
+					q[1] <= d[0];
+				end
+endmodule

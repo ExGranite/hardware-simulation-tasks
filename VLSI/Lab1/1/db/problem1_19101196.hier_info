@@ -1,0 +1,11 @@
+|problem1_19101196
+A[0] => always0~1.IN0
+A[0] => always0~0.IN1
+A[1] => always0~5.IN0
+A[1] => always0~0.IN0
+A[2] => always0~5.IN1
+A[2] => always0~1.IN1
+Y[0] <= Y[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Y[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

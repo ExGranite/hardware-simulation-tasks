@@ -1,0 +1,84 @@
+// DSCH 2.7a
+// 08/12/2021 16:10:32
+// A:\FALL 2021\CSE460\Lab\LAB Assignment 3\Lab Task\Problem3\ResetFlipFlop.sch
+
+module ResetFlipFlop( D,Reset,Clock,Q,~Q);
+ input D,Reset,Clock;
+ output Q,~Q;
+ wire w7,w8,w9,w10,w11,w12,w13,w14;
+ wire w15,w16,w17,w18,w19,w20,w21,w22;
+ wire w23,w24,w25,w26;
+ not #(27) inverter(~Q,Q);
+ not #(87) invertor_clock_Fl1(w7,Clock);
+ nand #(74) nand_Dl1_Fl2(w9,Clock,w8);
+ nand #(74) nand_Dl2_Fl3(w11,w10,Clock);
+ nand #(93) nand_Dl3_Fl4(w4,w3,w9);
+ nand #(79) nand_Dl4_Fl5(w3,w11,w4);
+ not #(61) invertor_clock_Dl5_Fl6(w10,w8);
+ nmos #(73) nmos_na1_Dl6_Fl7(w9,w12,w8); //  
+ nmos #(14) nmos_na2_Dl7_Fl8(w12,vss,Clock); //  
+ pmos #(73) pmos_na3_Dl8_Fl9(w9,vdd,w8); //  
+ pmos #(73) pmos_na4_Dl9_Fl10(w9,vdd,Clock); //  
+ nmos #(73) nmos_na5_Dl10_Fl11(w11,w13,Clock); //  
+ nmos #(14) nmos_na6_Dl11_Fl12(w13,vss,w10); //  
+ pmos #(73) pmos_na7_Dl12_Fl13(w11,vdd,Clock); //  
+ pmos #(73) pmos_na8_Dl13_Fl14(w11,vdd,w10); //  
+ nmos #(93) nmos_na9_Dl14_Fl15(w4,w14,w9); //  
+ nmos #(14) nmos_na10_Dl15_Fl16(w14,vss,w3); //  
+ pmos #(93) pmos_na11_Dl16_Fl17(w4,vdd,w9); //  
+ pmos #(93) pmos_na12_Dl17_Fl18(w4,vdd,w3); //  
+ nmos #(79) nmos_na13_Dl18_Fl19(w3,w15,w4); //  
+ nmos #(14) nmos_na14_Dl19_Fl20(w15,vss,w11); //  
+ pmos #(79) pmos_na15_Dl20_Fl21(w3,vdd,w4); //  
+ pmos #(79) pmos_na16_Dl21_Fl22(w3,vdd,w11); //  
+ pmos #(60) pmos_in17_Dl22_Fl23(w10,vdd,w8); //  
+ nmos #(60) nmos_in18_Dl23_Fl24(w10,vss,w8); //  
+ pmos #(85) pmos_in24_Fl25(w7,vdd,Clock); //  
+ nmos #(85) nmos_in25_Fl26(w7,vss,Clock); //  
+ nand #(74) nand_Dl26_Fl27(w16,w7,D);
+ nand #(74) nand_Dl27_Fl28(w18,w17,w7);
+ nand #(138) nand_Dl28_Fl29(w8,w19,w16);
+ nand #(75) nand_Dl29_Fl30(w19,w18,w8);
+ not #(61) invertor_clock_Dl30_Fl31(w17,D);
+ nmos #(73) nmos_na1_Dl31_Fl32(w16,w20,D); //  
+ nmos #(14) nmos_na2_Dl32_Fl33(w20,vss,w7); //  
+ pmos #(73) pmos_na3_Dl33_Fl34(w16,vdd,D); //  
+ pmos #(73) pmos_na4_Dl34_Fl35(w16,vdd,w7); //  
+ nmos #(73) nmos_na5_Dl35_Fl36(w18,w21,w7); //  
+ nmos #(14) nmos_na6_Dl36_Fl37(w21,vss,w17); //  
+ pmos #(73) pmos_na7_Dl37_Fl38(w18,vdd,w7); //  
+ pmos #(73) pmos_na8_Dl38_Fl39(w18,vdd,w17); //  
+ nmos #(138) nmos_na9_Dl39_Fl40(w8,w22,w16); //  
+ nmos #(14) nmos_na10_Dl40_Fl41(w22,vss,w19); //  
+ pmos #(138) pmos_na11_Dl41_Fl42(w8,vdd,w16); //  
+ pmos #(138) pmos_na12_Dl42_Fl43(w8,vdd,w19); //  
+ nmos #(75) nmos_na13_Dl43_Fl44(w19,w23,w8); //  
+ nmos #(14) nmos_na14_Dl44_Fl45(w23,vss,w18); //  
+ pmos #(75) pmos_na15_Dl45_Fl46(w19,vdd,w8); //  
+ pmos #(75) pmos_na16_Dl46_Fl47(w19,vdd,w18); //  
+ pmos #(60) pmos_in17_Dl47_Fl48(w17,vdd,D); //  
+ nmos #(60) nmos_in18_Dl48_Fl49(w17,vss,D); //  
+ not #(45) invertor_clock_Re50(w24,Q);
+ nmos #(51) nmos_Re51(w26,w25,w24); //  
+ nmos #(12) nmos_Re52(w25,vss,w4); //  
+ pmos #(51) pmos_Re53(w26,vdd,w24); //  
+ pmos #(51) pmos_Re54(w26,vdd,w4); //  
+ not #(77) invertor_clock_Re55(Q,w26);
+ pmos #(43) pmos_in1_Re56(w24,vdd,Q); //  
+ nmos #(43) nmos_in2_Re57(w24,vss,Q); //  
+ pmos #(75) pmos_in3_Re58(Q,vdd,w26); //  
+ nmos #(75) nmos_in4_Re59(Q,vss,w26); //  
+ pmos #(21) pmos_in60(~Q,vdd,Q); //  
+ nmos #(21) nmos_in61(~Q,vss,Q); //  
+endmodule
+
+// Simulation parameters in Verilog Format
+always
+#1000 D=~D;
+#2000 Reset=~Reset;
+#1000 Clock=~Clock;
+
+// Simulation parameters
+// D CLK 10 10
+// Reset CLK 20 20
+// Clock CLK 10.000 10.000

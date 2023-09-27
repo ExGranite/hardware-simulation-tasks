@@ -1,0 +1,21 @@
+// DSCH 2.7a
+// 07/12/2021 22:20:03
+// A:\FALL 2021\CSE460\Lab\LAB Assignment 3\Lab Task\Problem3\nand.sch
+
+module nand( b,a,nand);
+ input b,a;
+ output nand;
+ nmos #(24) nmos(nand,w1,a); // 1.0u 0.12u
+ nmos #(10) nmos(w1,vss,b); // 1.0u 0.12u
+ pmos #(24) pmos(nand,vdd,a); // 2.0u 0.12u
+ pmos #(24) pmos(nand,vdd,b); // 2.0u 0.12u
+endmodule
+
+// Simulation parameters in Verilog Format
+always
+#1000 b=~b;
+#2000 a=~a;
+
+// Simulation parameters
+// b CLK 10 10
+// a CLK 20 20

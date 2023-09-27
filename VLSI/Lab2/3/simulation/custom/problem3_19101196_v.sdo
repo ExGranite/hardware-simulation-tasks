@@ -1,0 +1,425 @@
+// Copyright (C) 1991-2008 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+
+// 
+// Device: Altera EP2S15F484C3 Package FBGA484
+// 
+
+// 
+// This SDF file should be used for Custom Verilog HDL only
+// 
+
+(DELAYFILE
+  (SDFVERSION "2.1")
+  (DESIGN "problem3_19101196")
+  (DATE "12/02/2021 18:30:48")
+  (VENDOR "Altera")
+  (PROGRAM "Quartus II")
+  (VERSION "Version 8.1 Build 163 10/28/2008 SJ Web Edition")
+  (DIVIDER .)
+  (TIMESCALE 1 ps)
+
+  (CELL
+    (CELLTYPE "stratixii_asynch_io")
+    (INSTANCE Clock\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (854:854:854) (854:854:854))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_clkctrl")
+    (INSTANCE Clock\~clkctrl)
+    (DELAY
+      (ABSOLUTE
+        (PORT inclk[0] (343:343:343) (343:343:343))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_ena_reg")
+    (INSTANCE Clock\~clkctrl.extena0_reg)
+    (DELAY
+      (ABSOLUTE
+        (PORT d (0:0:0) (0:0:0))
+        (PORT clk (0:0:0) (0:0:0))
+        (IOPATH (posedge clk) q (85:85:85) (85:85:85))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP d (posedge clk) (49:49:49))
+      (HOLD d (posedge clk) (49:49:49))
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_asynch_io")
+    (INSTANCE w\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (820:820:820) (820:820:820))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_comb")
+    (INSTANCE Y\.E\~8)
+    (DELAY
+      (ABSOLUTE
+        (PORT datae (3501:3501:3501) (3501:3501:3501))
+        (PORT dataf (208:208:208) (208:208:208))
+        (IOPATH datae combout (154:154:154) (154:154:154))
+        (IOPATH dataf combout (53:53:53) (53:53:53))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_asynch_io")
+    (INSTANCE Resetn\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (864:864:864) (864:864:864))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_clkctrl")
+    (INSTANCE Resetn\~clkctrl)
+    (DELAY
+      (ABSOLUTE
+        (PORT inclk[0] (343:343:343) (343:343:343))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_ena_reg")
+    (INSTANCE Resetn\~clkctrl.extena0_reg)
+    (DELAY
+      (ABSOLUTE
+        (PORT d (0:0:0) (0:0:0))
+        (PORT clk (0:0:0) (0:0:0))
+        (IOPATH (posedge clk) q (85:85:85) (85:85:85))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP d (posedge clk) (49:49:49))
+      (HOLD d (posedge clk) (49:49:49))
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_ff")
+    (INSTANCE y\.E)
+    (DELAY
+      (ABSOLUTE
+        (PORT clk (1286:1286:1286) (1286:1286:1286))
+        (PORT datain (155:155:155) (155:155:155))
+        (PORT aclr (1018:1018:1018) (1018:1018:1018))
+        (IOPATH (posedge clk) regout (94:94:94) (94:94:94))
+        (IOPATH (posedge aclr) regout (213:213:213) (213:213:213))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (90:90:90))
+      (HOLD datain (posedge clk) (149:149:149))
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_comb")
+    (INSTANCE Selector1\~23DUPLICATE)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (3545:3545:3545) (3545:3545:3545))
+        (PORT datae (229:229:229) (229:229:229))
+        (PORT dataf (234:234:234) (234:234:234))
+        (IOPATH datab combout (357:357:357) (357:357:357))
+        (IOPATH datae combout (154:154:154) (154:154:154))
+        (IOPATH dataf combout (53:53:53) (53:53:53))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_ff")
+    (INSTANCE y\.B\~DUPLICATE)
+    (DELAY
+      (ABSOLUTE
+        (PORT clk (1286:1286:1286) (1286:1286:1286))
+        (PORT datain (155:155:155) (155:155:155))
+        (PORT aclr (1018:1018:1018) (1018:1018:1018))
+        (IOPATH (posedge clk) regout (94:94:94) (94:94:94))
+        (IOPATH (posedge aclr) regout (213:213:213) (213:213:213))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (90:90:90))
+      (HOLD datain (posedge clk) (149:149:149))
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_comb")
+    (INSTANCE Selector4\~23)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (3527:3527:3527) (3527:3527:3527))
+        (PORT datae (222:222:222) (222:222:222))
+        (PORT dataf (228:228:228) (228:228:228))
+        (IOPATH datac combout (272:272:272) (272:272:272))
+        (IOPATH datae combout (154:154:154) (154:154:154))
+        (IOPATH dataf combout (53:53:53) (53:53:53))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_ff")
+    (INSTANCE y\.F)
+    (DELAY
+      (ABSOLUTE
+        (PORT clk (1286:1286:1286) (1286:1286:1286))
+        (PORT datain (155:155:155) (155:155:155))
+        (PORT aclr (1018:1018:1018) (1018:1018:1018))
+        (IOPATH (posedge clk) regout (94:94:94) (94:94:94))
+        (IOPATH (posedge aclr) regout (213:213:213) (213:213:213))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (90:90:90))
+      (HOLD datain (posedge clk) (149:149:149))
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_comb")
+    (INSTANCE Selector3\~14)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (3533:3533:3533) (3533:3533:3533))
+        (PORT datae (214:214:214) (214:214:214))
+        (PORT dataf (221:221:221) (221:221:221))
+        (IOPATH datac combout (272:272:272) (272:272:272))
+        (IOPATH datae combout (154:154:154) (154:154:154))
+        (IOPATH dataf combout (53:53:53) (53:53:53))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_ff")
+    (INSTANCE y\.C)
+    (DELAY
+      (ABSOLUTE
+        (PORT clk (1286:1286:1286) (1286:1286:1286))
+        (PORT datain (155:155:155) (155:155:155))
+        (PORT aclr (1018:1018:1018) (1018:1018:1018))
+        (IOPATH (posedge clk) regout (94:94:94) (94:94:94))
+        (IOPATH (posedge aclr) regout (213:213:213) (213:213:213))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (90:90:90))
+      (HOLD datain (posedge clk) (149:149:149))
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_comb")
+    (INSTANCE Y\.G\~15)
+    (DELAY
+      (ABSOLUTE
+        (PORT datae (3494:3494:3494) (3494:3494:3494))
+        (PORT dataf (217:217:217) (217:217:217))
+        (IOPATH datae combout (154:154:154) (154:154:154))
+        (IOPATH dataf combout (53:53:53) (53:53:53))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_ff")
+    (INSTANCE y\.G)
+    (DELAY
+      (ABSOLUTE
+        (PORT clk (1286:1286:1286) (1286:1286:1286))
+        (PORT datain (155:155:155) (155:155:155))
+        (PORT aclr (1018:1018:1018) (1018:1018:1018))
+        (IOPATH (posedge clk) regout (94:94:94) (94:94:94))
+        (IOPATH (posedge aclr) regout (213:213:213) (213:213:213))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (90:90:90))
+      (HOLD datain (posedge clk) (149:149:149))
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_comb")
+    (INSTANCE Selector0\~16)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (3533:3533:3533) (3533:3533:3533))
+        (PORT datac (242:242:242) (242:242:242))
+        (PORT datae (214:214:214) (214:214:214))
+        (PORT dataf (208:208:208) (208:208:208))
+        (IOPATH datab combout (357:357:357) (357:357:357))
+        (IOPATH datac combout (272:272:272) (272:272:272))
+        (IOPATH datae combout (154:154:154) (154:154:154))
+        (IOPATH dataf combout (53:53:53) (53:53:53))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_ff")
+    (INSTANCE y\.A)
+    (DELAY
+      (ABSOLUTE
+        (PORT clk (1286:1286:1286) (1286:1286:1286))
+        (PORT datain (155:155:155) (155:155:155))
+        (PORT aclr (1018:1018:1018) (1018:1018:1018))
+        (IOPATH (posedge clk) regout (94:94:94) (94:94:94))
+        (IOPATH (posedge aclr) regout (213:213:213) (213:213:213))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (90:90:90))
+      (HOLD datain (posedge clk) (149:149:149))
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_comb")
+    (INSTANCE Selector1\~23)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (3545:3545:3545) (3545:3545:3545))
+        (PORT datae (228:228:228) (228:228:228))
+        (PORT dataf (236:236:236) (236:236:236))
+        (IOPATH datab combout (357:357:357) (357:357:357))
+        (IOPATH datae combout (154:154:154) (154:154:154))
+        (IOPATH dataf combout (53:53:53) (53:53:53))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_ff")
+    (INSTANCE y\.B)
+    (DELAY
+      (ABSOLUTE
+        (PORT clk (1286:1286:1286) (1286:1286:1286))
+        (PORT datain (155:155:155) (155:155:155))
+        (PORT aclr (1018:1018:1018) (1018:1018:1018))
+        (IOPATH (posedge clk) regout (94:94:94) (94:94:94))
+        (IOPATH (posedge aclr) regout (213:213:213) (213:213:213))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (90:90:90))
+      (HOLD datain (posedge clk) (149:149:149))
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_comb")
+    (INSTANCE Y\.E\~8DUPLICATE)
+    (DELAY
+      (ABSOLUTE
+        (PORT datae (3497:3497:3497) (3497:3497:3497))
+        (PORT dataf (209:209:209) (209:209:209))
+        (IOPATH datae combout (154:154:154) (154:154:154))
+        (IOPATH dataf combout (53:53:53) (53:53:53))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_ff")
+    (INSTANCE y\.E\~DUPLICATE)
+    (DELAY
+      (ABSOLUTE
+        (PORT clk (1286:1286:1286) (1286:1286:1286))
+        (PORT datain (155:155:155) (155:155:155))
+        (PORT aclr (1018:1018:1018) (1018:1018:1018))
+        (IOPATH (posedge clk) regout (94:94:94) (94:94:94))
+        (IOPATH (posedge aclr) regout (213:213:213) (213:213:213))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (90:90:90))
+      (HOLD datain (posedge clk) (149:149:149))
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_comb")
+    (INSTANCE Selector3\~14DUPLICATE)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (3533:3533:3533) (3533:3533:3533))
+        (PORT datae (212:212:212) (212:212:212))
+        (PORT dataf (222:222:222) (222:222:222))
+        (IOPATH datad combout (272:272:272) (272:272:272))
+        (IOPATH datae combout (154:154:154) (154:154:154))
+        (IOPATH dataf combout (53:53:53) (53:53:53))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_ff")
+    (INSTANCE y\.C\~DUPLICATE)
+    (DELAY
+      (ABSOLUTE
+        (PORT clk (1286:1286:1286) (1286:1286:1286))
+        (PORT datain (155:155:155) (155:155:155))
+        (PORT aclr (1018:1018:1018) (1018:1018:1018))
+        (IOPATH (posedge clk) regout (94:94:94) (94:94:94))
+        (IOPATH (posedge aclr) regout (213:213:213) (213:213:213))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (90:90:90))
+      (HOLD datain (posedge clk) (149:149:149))
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_comb")
+    (INSTANCE Selector2\~14)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (3534:3534:3534) (3534:3534:3534))
+        (PORT datae (210:210:210) (210:210:210))
+        (PORT dataf (208:208:208) (208:208:208))
+        (IOPATH datab combout (357:357:357) (357:357:357))
+        (IOPATH datae combout (154:154:154) (154:154:154))
+        (IOPATH dataf combout (53:53:53) (53:53:53))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_lcell_ff")
+    (INSTANCE y\.D)
+    (DELAY
+      (ABSOLUTE
+        (PORT clk (1286:1286:1286) (1286:1286:1286))
+        (PORT datain (155:155:155) (155:155:155))
+        (PORT aclr (1018:1018:1018) (1018:1018:1018))
+        (IOPATH (posedge clk) regout (94:94:94) (94:94:94))
+        (IOPATH (posedge aclr) regout (213:213:213) (213:213:213))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (90:90:90))
+      (HOLD datain (posedge clk) (149:149:149))
+    )
+  )
+  (CELL
+    (CELLTYPE "stratixii_asynch_io")
+    (INSTANCE z\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (490:490:490) (490:490:490))
+        (IOPATH datain padio (1962:1962:1962) (1962:1962:1962))
+      )
+    )
+  )
+)

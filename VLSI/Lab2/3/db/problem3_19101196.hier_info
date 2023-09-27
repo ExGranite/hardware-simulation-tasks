@@ -1,0 +1,16 @@
+|problem3_19101196
+Clock => y~0.IN1
+Resetn => y~1.IN1
+w => Selector3.IN3
+w => Selector0.IN4
+w => Selector1.IN2
+w => Selector2.IN3
+w => Y.E.DATAB
+w => Y.G.DATAB
+w => Selector3.IN1
+w => Selector2.IN1
+w => Selector0.IN2
+w => Selector4.IN1
+z <= z~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

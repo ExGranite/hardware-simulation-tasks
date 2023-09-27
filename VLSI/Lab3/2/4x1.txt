@@ -1,0 +1,69 @@
+// DSCH 2.7a
+// 08/12/2021 17:59:42
+// A:\FALL 2021\CSE460\Lab\LAB Assignment 3\Lab Task\Problem2\4x1.sch
+
+module 4x1( S1,I0,I1,I2,I3,S2,Y);
+ input S1,I0,I1,I2,I3,S2;
+ output Y;
+ wire w10,w11,w12,w13,w14,w15,w16,w17;
+ wire w18,w19,w20,w21,w22,w23,w24;
+ nmos #(61) nmos_2x1(w11,w10,S1); //  
+ nmos #(12) nmos_2x2(w10,vss,w1); //  
+ nmos #(61) nmos_2x3(w11,w12,w13); //  
+ nmos #(12) nmos_2x4(w12,vss,w2); //  
+ pmos #(33) pmos_2x5(w14,vdd,S1); //  
+ pmos #(61) pmos_2x6(w11,w14,w13); //  
+ pmos #(33) pmos_2x7(w14,vdd,w1); //  
+ pmos #(61) pmos_2x8(w11,w14,w2); //  
+ not #(35) inverter_2x9(Y,w11);
+ not #(45) inverter_2x10(w13,S1);
+ pmos #(32) pmos_in1_2x11(Y,vdd,w11); //  
+ nmos #(32) nmos_in2_2x12(Y,vss,w11); //  
+ pmos #(42) pmos_in3_2x13(w13,vdd,S1); //  
+ nmos #(42) nmos_in4_2x14(w13,vss,S1); //  
+ nmos #(61) nmos_2x15(w16,w15,S2); //  
+ nmos #(12) nmos_2x16(w15,vss,I1); //  
+ nmos #(61) nmos_2x17(w16,w17,w18); //  
+ nmos #(12) nmos_2x18(w17,vss,I0); //  
+ pmos #(33) pmos_2x19(w19,vdd,S2); //  
+ pmos #(61) pmos_2x20(w16,w19,w18); //  
+ pmos #(33) pmos_2x21(w19,vdd,I1); //  
+ pmos #(61) pmos_2x22(w16,w19,I0); //  
+ not #(42) inverter_2x23(w2,w16);
+ not #(45) inverter_2x24(w18,S2);
+ pmos #(39) pmos_in1_2x25(w2,vdd,w16); //  
+ nmos #(39) nmos_in2_2x26(w2,vss,w16); //  
+ pmos #(42) pmos_in3_2x27(w18,vdd,S2); //  
+ nmos #(42) nmos_in4_2x28(w18,vss,S2); //  
+ nmos #(61) nmos_2x29(w21,w20,S2); //  
+ nmos #(12) nmos_2x30(w20,vss,I3); //  
+ nmos #(61) nmos_2x31(w21,w22,w23); //  
+ nmos #(12) nmos_2x32(w22,vss,I2); //  
+ pmos #(33) pmos_2x33(w24,vdd,S2); //  
+ pmos #(61) pmos_2x34(w21,w24,w23); //  
+ pmos #(33) pmos_2x35(w24,vdd,I3); //  
+ pmos #(61) pmos_2x36(w21,w24,I2); //  
+ not #(42) inverter_2x37(w1,w21);
+ not #(45) inverter_2x38(w23,S2);
+ pmos #(39) pmos_in1_2x39(w1,vdd,w21); //  
+ nmos #(39) nmos_in2_2x40(w1,vss,w21); //  
+ pmos #(42) pmos_in3_2x41(w23,vdd,S2); //  
+ nmos #(42) nmos_in4_2x42(w23,vss,S2); //  
+endmodule
+
+// Simulation parameters in Verilog Format
+always
+#1000 S1=~S1;
+#2000 I0=~I0;
+#4000 I1=~I1;
+#8000 I2=~I2;
+#16000 I3=~I3;
+#32000 S2=~S2;
+
+// Simulation parameters
+// S1 CLK 10 10
+// I0 CLK 20 20
+// I1 CLK 40 40
+// I2 CLK 80 80
+// I3 CLK 160 160
+// S2 CLK 320 320

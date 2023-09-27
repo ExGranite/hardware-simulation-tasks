@@ -1,0 +1,29 @@
+module problem1_19101196(y, a, b, c);
+	input a, b, c;
+	output y;
+	/*
+	assign a1 = ~a;
+	assign b1 = ~b;
+	assign c1 = ~c;
+	
+	assign x1 = a1 & b1 & c;
+	assign x2 = a1 & b & c1;
+	assign x3 = a & b1 & c1;
+	assign x4 = a & b & c;
+	
+	assign y = x1 | x2 | x3 | x4;
+	*/
+	//USING NAND GATES ONLY
+	
+	assign a1 = ~(a & a);
+	assign b1 = ~(b & b);
+	assign c1 = ~(c & c);
+	
+	assign x1 = ~(a1 & b1 & c);
+	assign x2 = ~(a1 & b & c1);
+	assign x3 = ~(a & b1 & c1);
+	assign x4 = ~(a & b & c);
+	
+	assign y = ~(x1 & x2 & x3 & x4);
+	
+endmodule

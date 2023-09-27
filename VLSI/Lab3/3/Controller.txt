@@ -1,0 +1,27 @@
+// DSCH 2.7a
+// 07/12/2021 23:21:02
+// A:\FALL 2021\CSE460\Lab\LAB Assignment 3\Lab Task\Problem3\Controller.sch
+
+module Controller( Reset,D,Out);
+ input Reset,D;
+ output Out;
+ not #(34) invertor_clock(w2,Reset);
+ nmos #(31) nmos(w4,w3,w2); // 1.0u 0.12u
+ nmos #(10) nmos(w3,vss,D); // 1.0u 0.12u
+ pmos #(31) pmos(w4,vdd,w2); // 2.0u 0.12u
+ pmos #(31) pmos(w4,vdd,D); // 2.0u 0.12u
+ not #(27) invertor_clock(Out,w4);
+ pmos #(30) pmos_in1(w2,vdd,Reset); //  
+ nmos #(30) nmos_in2(w2,vss,Reset); //  
+ pmos #(23) pmos_in3(Out,vdd,w4); //  
+ nmos #(23) nmos_in4(Out,vss,w4); //  
+endmodule
+
+// Simulation parameters in Verilog Format
+always
+#1000 Reset=~Reset;
+#2000 D=~D;
+
+// Simulation parameters
+// Reset CLK 10 10
+// D CLK 20 20

@@ -1,0 +1,16 @@
+|problem1_19101196
+y <= y~2.DB_MAX_OUTPUT_PORT_TYPE
+a => x4~0.IN0
+a => x3~0.IN0
+a => x2~0.IN0
+a => x1~0.IN0
+b => x4~0.IN1
+b => x2~0.IN1
+b => x3~0.IN1
+b => x1~0.IN1
+c => x4~1.IN0
+c => x1~1.IN1
+c => x3~1.IN0
+c => x2~1.IN0
+
+

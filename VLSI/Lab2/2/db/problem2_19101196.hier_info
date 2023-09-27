@@ -1,0 +1,20 @@
+|problem2_19101196
+Clock => y~0.IN1
+Resetn => y~1.IN1
+w[1] => Mux4.IN5
+w[1] => Mux3.IN5
+w[1] => Mux2.IN5
+w[1] => Mux1.IN5
+w[1] => Mux0.IN5
+w[1] => Decoder0.IN1
+w[2] => Mux4.IN4
+w[2] => Mux3.IN4
+w[2] => Mux2.IN4
+w[2] => Mux1.IN4
+w[2] => Mux0.IN4
+w[2] => Decoder0.IN0
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+c[1] <= c[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+c[2] <= c[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

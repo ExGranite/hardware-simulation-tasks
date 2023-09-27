@@ -1,0 +1,33 @@
+// DSCH 2.7a
+// 08/12/2021 17:57:00
+// A:\FALL 2021\CSE460\Lab\LAB Assignment 3\Lab Task\Problem2\2x1.sch
+
+module 2x1( I1,I0,S,Y);
+ input I1,I0,S;
+ output Y;
+ nmos #(38) nmos(w3,w1,S); // 1.0u 0.12u
+ nmos #(10) nmos(w1,vss,I1); // 1.0u 0.12u
+ nmos #(38) nmos(w3,w5,w6); // 1.0u 0.12u
+ nmos #(10) nmos(w5,vss,I0); // 1.0u 0.12u
+ pmos #(24) pmos(w8,vdd,S); // 2.0u 0.12u
+ pmos #(38) pmos(w3,w8,w6); // 2.0u 0.12u
+ pmos #(24) pmos(w8,vdd,I1); // 2.0u 0.12u
+ pmos #(38) pmos(w3,w8,I0); // 2.0u 0.12u
+ not #(27) inverter(Y,w3);
+ not #(34) inverter(w6,S);
+ pmos #(21) pmos_in1(Y,vdd,w3); //  
+ nmos #(21) nmos_in2(Y,vss,w3); //  
+ pmos #(28) pmos_in3(w6,vdd,S); //  
+ nmos #(28) nmos_in4(w6,vss,S); //  
+endmodule
+
+// Simulation parameters in Verilog Format
+always
+#1000 I1=~I1;
+#2000 I0=~I0;
+#4000 S=~S;
+
+// Simulation parameters
+// I1 CLK 10 10
+// I0 CLK 20 20
+// S CLK 40 40

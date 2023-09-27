@@ -1,0 +1,41 @@
+// DSCH 2.7a
+// 07/12/2021 22:29:42
+// A:\FALL 2021\CSE460\Lab\LAB Assignment 3\Lab Task\Problem3\Dlatch.sch
+
+module Dlatch( Clock,D,~Q,Q);
+ input Clock,D;
+ output ~Q,Q;
+ wire w8,w9,w10,w11;
+ nand #(41) nand(w3,Clock,D);
+ nand #(41) nand(w5,w4,Clock);
+ nand #(48) nand(Q,~Q,w3);
+ nand #(48) nand(~Q,w5,Q);
+ not #(34) invertor_clock(w4,D);
+ nmos #(40) nmos_na1(w3,w8,D); //  
+ nmos #(12) nmos_na2(w8,vss,Clock); //  
+ pmos #(40) pmos_na3(w3,vdd,D); //  
+ pmos #(40) pmos_na4(w3,vdd,Clock); //  
+ nmos #(40) nmos_na5(w5,w9,Clock); //  
+ nmos #(12) nmos_na6(w9,vss,w4); //  
+ pmos #(40) pmos_na7(w5,vdd,Clock); //  
+ pmos #(40) pmos_na8(w5,vdd,w4); //  
+ nmos #(47) nmos_na9(Q,w10,w3); //  
+ nmos #(12) nmos_na10(w10,vss,~Q); //  
+ pmos #(47) pmos_na11(Q,vdd,w3); //  
+ pmos #(47) pmos_na12(Q,vdd,~Q); //  
+ nmos #(47) nmos_na13(~Q,w11,Q); //  
+ nmos #(12) nmos_na14(w11,vss,w5); //  
+ pmos #(47) pmos_na15(~Q,vdd,Q); //  
+ pmos #(47) pmos_na16(~Q,vdd,w5); //  
+ pmos #(30) pmos_in17(w4,vdd,D); //  
+ nmos #(30) nmos_in18(w4,vss,D); //  
+endmodule
+
+// Simulation parameters in Verilog Format
+always
+#1000 Clock=~Clock;
+#2000 D=~D;
+
+// Simulation parameters
+// Clock CLK 10 10
+// D CLK 20 20
