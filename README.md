@@ -33,3 +33,6 @@
 - [Binary Weighted and R/2R Resistors](https://github.com/ExGranite/hardware-simulation-tasks/blob/main/Digital%20Electronics/4/)
 - [Triangular Wave Generator](https://github.com/ExGranite/hardware-simulation-tasks/blob/main/Digital%20Electronics/5/)
 - [Astable Multivibrator Circuit](https://github.com/ExGranite/hardware-simulation-tasks/blob/main/Digital%20Electronics/6/)
+
+### DIGITAL LOGIC DESIGN:
+- [Lock](https://github.com/ExGranite/hardware-simulation-tasks/blob/main/DLD%20Project/)
